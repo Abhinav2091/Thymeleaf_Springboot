@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<!-- to allow using thymeleaf -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        Thymeleaf Employee Form.
+    </title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container">
+    <h3>
+        Employee Directory
+    </h3>
+    <hr>
+    <p class="h4 mb-4">Save Employee</p>
+    <form action="#" th:action="@{/api/employees/save}"
+          th:object="${employee}" method="POST">
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}"/>
+        <input type="text" th:field="*{firstName}" placeholder="First Name"/>
+        <input type="text" th:field="*{lastName}" placeholder="Last Name"/>
+        <input type="text" th:field="*{email}" placeholder="Email"/>
+<button type="submit" class="btn btn-info col-2">Save</button>
+    </form>
+    <hr>
+    <a href="@{/api/employees/list}">Back to Employee list.</a>
+</div>
+</body>
+</html>

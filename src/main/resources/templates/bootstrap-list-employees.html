@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!-- to allow using thymeleaf -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        Thymeleaf Employee directory.
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<div clas="container">
+<h3>Employee Directory.</h3>
+<hr>
+<table class="table table-bordered table-stripes">
+    <thead class="thead-dark">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="templateEmployee : ${employees}">
+        <td th:text="${templateEmployee.firstName}" />
+        <td th:text="${templateEmployee.lastName}" />
+        <td th:text="${templateEmployee.email}" />
+
+    </tr>
+
+    </tbody>
+</table>
+</hr>
+</div>
+</body>
+</html>
